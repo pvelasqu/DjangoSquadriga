@@ -1,14 +1,52 @@
 <html>
     <head>
         <title>Squadriga</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'footer.css' %}">
     </head>
     <body>
-        <nav class="navbar navbar-light" style="background-color: #581845;">
-        <!-- Navbar content -->
+        <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #900C3F;">
+            <a class="navbar-brand" href="{% url 'index' %}">Squadriga</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Coin Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Twitter Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'pablo' %}">Blog</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
         {% block content %}
         {% endblock %}
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <span class="text-muted">Ethereum Wallet:</span>
+                    </div>
+                    <div class="col">
+                        <span class="text-muted">Bitcoin Wallet:</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

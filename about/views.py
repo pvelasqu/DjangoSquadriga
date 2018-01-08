@@ -4,5 +4,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 
-def index(request):
+def about(request):
     return render(request, 'about/about_team.html')
+
+
+def pablo(request):
+    return render(request, 'about/about_pablo.html')
